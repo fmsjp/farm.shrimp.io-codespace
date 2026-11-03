@@ -96,6 +96,7 @@ cat > src/assets/appconfig.json <<JSON
     ]
 }
 JSON
+[ -x node_modules/.bin/ng ] || yarn install --frozen-lockfile
 setsid nohup yarn start >/tmp/angular.log 2>&1 &
 
 # Wait until both servers answer, so the URLs below work when they are printed.
